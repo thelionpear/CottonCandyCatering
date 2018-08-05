@@ -21,8 +21,7 @@ class CCCarousel extends Component {
             infiniteLoop={true}
             autoPlay={true}
             interval={3000}
-            width={700}
-            height={500}
+            width={"500px"}
           >
               <div>
                   <img src={CC2} />

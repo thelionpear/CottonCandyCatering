@@ -40,30 +40,41 @@ class Home extends Component {
             </Text> 
           </GraySections> 
           <Divider /> 
-          <GraySections>
+          <GraySections2>
             <CCCarousel/> 
-          </GraySections> 
+          </GraySections2> 
           <Divider /> 
-          <GraySections> 
+          <GraySections3> 
+            <Review class="column"> 
             <Text>***This is where some fake reviews can go, probably in three columns***</Text> 
-          </GraySections> 
-          <Divider /> 
-          <GraySections> 
-            <TitleText>To Book Cotton Candy Catering for Your Event:</TitleText> 
-            <Text>
+            </Review> 
+            <Review class="column"> 
+            <Text>***This is where some fake reviews can go, probably in three columns***</Text> 
+            </Review> 
+            <Review class="column"> 
+            <Text>***This is where some fake reviews can go, probably in three columns***</Text> 
+            </Review> 
+          </GraySections3> 
+          <Divider hidden/> 
+          <GraySections4> 
+            <TitleTextWhite>To Book Cotton Candy Catering for Your Event:</TitleTextWhite> 
+            <TextWhite>
               Reach out to us by phone at: 555-555-5555
-            </Text> 
-            <Text>
+            </TextWhite> 
+            <TextWhite>
               by email at: email@email.com 
-            </Text>
-          </GraySections> 
+            </TextWhite>
+          </GraySections4> 
         </Container> 
       </div> 
     );
   }
 }
 
-
+const Review = styled.div`
+border: 1px solid gray; 
+margin: 5px; 
+`
 const UpperSection = styled.div `
 flex-direction: column; 
 display: flex; 
@@ -94,15 +105,57 @@ justify-content: center;
 color: #6c6c6c; 
 font-family: clarendonlight;
 `
+const TitleTextWhite = styled.h1 `
+font-size: 25px; 
+text-align: center; 
+align-items: center;
+justify-content: center;
+color: white;  
+font-family: clarendonlight;
+`
+
+const TextWhite = styled.h1 `
+font-size: 20px; 
+text-align: center; 
+align-items: center;
+justify-content: center;
+color: white;  
+font-family: clarendonlight;
+`
 
 const Title = styled.div `
 font-size: 50px; 
 text-align: center; 
 `
+
 const GraySections = styled.div `
 padding-top: 20px;  
 padding-left: 10px; 
 padding-right: 10px; 
+`
+
+const GraySections2 = styled.div `
+padding-top: 20px;  
+padding-left: 10px; 
+padding-right: 10px; 
+display: flex; 
+justify-content: center;  
+`
+
+const GraySections3 = styled.div `
+padding-top: 20px;  
+padding-left: 10px; 
+padding-right: 10px; 
+display: flex; 
+justify-content: center;  
+`
+const GraySections4 = styled.div `
+padding-top: 20px;  
+padding-left: 10px; 
+padding-right: 10px; 
+justify-content: center; 
+background-color: #6c6c6c; 
+color: white; 
 `
 
 export default Home;
