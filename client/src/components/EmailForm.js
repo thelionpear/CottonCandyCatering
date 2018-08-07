@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Checkbox, Form, Container } from 'semantic-ui-react'
-
-
+import { Link, withRouter } from 'react-router-dom';
 
 class EmailForm extends Component {
 
@@ -17,6 +16,12 @@ class EmailForm extends Component {
 
     return (
     <Container> 
+    <Button
+            as={ Link }
+            to={`/`}
+            >
+            Return Home
+          </Button>
       <Form>
         <Form.Field>
           <label>First Name</label>
@@ -52,7 +57,7 @@ class EmailForm extends Component {
               />
         </Form.Group> 
         <Form.TextArea label='Additional Details' placeholder='What else do I need to know?' />
-        <Button type='submit'>Submit</Button>
+        <Form.Button type='submit'>Submit</Form.Button>
       </Form>
     </Container> 
     )
