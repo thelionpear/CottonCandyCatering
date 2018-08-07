@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Container, Divider, Header, Menu, Image } from 'semantic-ui-react';
+import { Container, Divider, Header, Menu, Image, Button } from 'semantic-ui-react';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { handleLogout } from '../reducers/user';
@@ -27,6 +27,12 @@ class Home extends Component {
                 <Image src={twitter} size="mini" floated="right" circular alt="Twitter logo"/>
               </a> 
           </Logos> 
+          <Button
+            as={ Link }
+            to={`/booknow`}
+            >
+            Book Now 
+          </Button>
           <Divider /> 
         </UpperSection> 
         <Container> 
@@ -83,7 +89,7 @@ background-color: gray;
 padding-top: 40px; 
 `
 
-const Logos = styled.div `
+const Logos = styled.span `
 justify-content: flex-end; 
 margin-right: 15px; 
 `
@@ -123,7 +129,7 @@ color: white;
 font-family: clarendonlight;
 `
 
-const Title = styled.div `
+const Title = styled.span `
 font-size: 50px; 
 text-align: center; 
 `
