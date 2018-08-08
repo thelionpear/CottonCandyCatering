@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import { Menu, Image } from 'semantic-ui-react';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { handleLogout } from '../reducers/user';
-import Instagram from '../images/instagram_logo.png';
+import instaGram from '../images/instagram_logo.png';
 import twitter from '../images/twitter_logo.png';
 import faceBook from '../images/facebook_logo.png';
 import styled from 'styled-components'
-
+import { Divider, Menu, Image, Button } from 'semantic-ui-react';
 
 class NavBar extends Component {
 
@@ -37,54 +36,60 @@ class NavBar extends Component {
     );
   }
 
-  logos = () => {
+  header = () => {
     return (
-      <Menu.Menu position='right'>
-        <Link to='/'>
-          <Image src={Instagram} size="mini" floated="right" circular alt="instagram logo"/> 
-        </Link> 
-          <span>Instagram</span> 
-        <Link to='/'>
-          <Image src={faceBook}  size="mini" floated="right" circular alt="Facebook logo"/> 
-        </Link> 
-          <span>Facebook</span>
-        <Link to='/'>
-          <Image src={twitter} size="mini" floated="right" circular alt="Twitter logo"/>
-        </Link> 
-          <span>Twitter</span> 
-      </Menu.Menu> 
+       <UpperSection> 
+          <Title as='h1' textAlign='center'>Cotton Candy Catering</Title>
+          <Logos> 
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                <Image src={instaGram} size="mini" floated="right" circular alt="instagram logo"/> 
+              </a> 
+              <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                <Image src={faceBook}  size="mini" floated="right" circular alt="Facebook logo"/> 
+              </a>
+              <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"> 
+                <Image src={twitter} size="mini" floated="right" circular alt="Twitter logo"/>
+              </a> 
+          </Logos> 
+          <Button
+            as={ Link }
+            to={`/booknow`}
+            >
+            Book Now 
+          </Button>
+          <Divider /> 
+        </UpperSection>
     )
   }
+     
 
   render() {
     return (
       <div>
-        <Menu pointing secondary>
-          {/* <Link to='/'>
-            <Menu.Item name='home' />
-          </Link> */}
-          { this.logos() }
-        </Menu>
+        {this.header()}
       </div>
     );
   }
 }
 
-const SocialMedia = styled.img `
-left: 890px;
-top: -33px;
-position: absolute;
-height: 27px;
-width: 33px;
-z-index: 5;
-display: block;
-opacity: 1.0;
+const UpperSection = styled.div `
+flex-direction: column; 
+display: flex; 
+color: white; 
+background-color: gray; 
+padding-top: 40px; 
+`
+const Title = styled.span `
+font-size: 50px; 
+text-align: center; 
+`
+const Logos = styled.span `
+justify-content: flex-end; 
+margin-right: 15px; 
 `
 
 const mapStateToProps = state => {
   return { user: state.user };
 };
 
-// export default withRouter(connect(mapStateToProps)(NavBar));
-
-export default NavBar; 
+export default withRouter(connect(mapStateToProps)(NavBar));

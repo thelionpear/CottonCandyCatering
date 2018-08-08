@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Container, Divider, Header, Menu, Image, Button } from 'semantic-ui-react';
-import { Link, withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { handleLogout } from '../reducers/user';
-import instaGram from '../images/instagram_logo.png';
-import twitter from '../images/twitter_logo.png';
-import faceBook from '../images/facebook_logo.png';
+import { Container, Divider } from 'semantic-ui-react';
+// import { withRouter } from 'react-router-dom';
+// import { connect } from 'react-redux';
+// import { handleLogout } from '../reducers/user';
 import CCCarousel from './CCCarousel'; 
 
 class Home extends Component {
@@ -14,27 +11,6 @@ class Home extends Component {
   render() {
     return (
       <div> 
-        <UpperSection> 
-          <Title as='h1' textAlign='center'>Cotton Candy Catering</Title>
-          <Logos> 
-              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
-                <Image src={instaGram} size="mini" floated="right" circular alt="instagram logo"/> 
-              </a> 
-              <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
-                <Image src={faceBook}  size="mini" floated="right" circular alt="Facebook logo"/> 
-              </a>
-              <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"> 
-                <Image src={twitter} size="mini" floated="right" circular alt="Twitter logo"/>
-              </a> 
-          </Logos> 
-          <Button
-            as={ Link }
-            to={`/booknow`}
-            >
-            Book Now 
-          </Button>
-          <Divider /> 
-        </UpperSection> 
         <Container> 
           <GraySections> 
             <TitleText>A One-of-a-Kind Experience</TitleText> 
@@ -81,18 +57,6 @@ const Review = styled.div`
 border: 1px solid gray; 
 margin: 5px; 
 `
-const UpperSection = styled.div `
-flex-direction: column; 
-display: flex; 
-color: white; 
-background-color: gray; 
-padding-top: 40px; 
-`
-
-const Logos = styled.span `
-justify-content: flex-end; 
-margin-right: 15px; 
-`
 
 const TitleText = styled.h1 `
 font-size: 25px; 
@@ -127,11 +91,6 @@ align-items: center;
 justify-content: center;
 color: white;  
 font-family: clarendonlight;
-`
-
-const Title = styled.span `
-font-size: 50px; 
-text-align: center; 
 `
 
 const GraySections = styled.div `

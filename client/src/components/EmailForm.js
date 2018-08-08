@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Button, Checkbox, Form, Container } from 'semantic-ui-react'
-import { Link, withRouter } from 'react-router-dom';
+import { Button, Form, Container } from 'semantic-ui-react'
+import { Link } from 'react-router-dom';
 
 class EmailForm extends Component {
 

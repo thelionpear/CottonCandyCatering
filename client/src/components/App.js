@@ -11,11 +11,12 @@ import AuthRoute from './AuthRoute';
 import FetchUser from './FetchUser';
 import EmailForm from './EmailForm'; 
 
+
 class App extends Component {
   render() {
     return (
       <div>
-        {/* <NavBar /> */}
+        <NavBar />
         <Flash />
         <FetchUser>
           <Switch>
