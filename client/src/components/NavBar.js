@@ -36,6 +36,30 @@ class NavBar extends Component {
     );
   }
 
+  changingButton = () => {
+
+    if (window.location.pathname === "/") {
+      return (
+        <Button
+          as={ Link }
+          to={`/booknow`}
+          >
+          Book Now
+        </Button>
+      );
+    }
+    else {
+      return (
+        <Button
+          as={ Link }
+          to={`/`}
+          >
+          Return Home 
+        </Button>
+      );
+    }
+  }
+
   header = () => {
     return (
        <UpperSection> 
@@ -51,12 +75,7 @@ class NavBar extends Component {
                 <Image src={twitter} size="mini" floated="right" circular alt="Twitter logo"/>
               </a> 
           </Logos> 
-          <Button
-            as={ Link }
-            to={`/booknow`}
-            >
-            Book Now 
-          </Button>
+         {this.changingButton()}
           <Divider /> 
         </UpperSection>
     )

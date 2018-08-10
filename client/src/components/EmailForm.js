@@ -15,13 +15,7 @@ class EmailForm extends Component {
     const { value } = this.state 
 
     return (
-    <Container> 
-    <Button
-            as={ Link }
-            to={`/`}
-            >
-            Return Home
-          </Button>
+    <Container>
       <Form>
         <Form.Field>
           <label>First Name</label>
