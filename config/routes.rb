@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'products/create'
+  get 'products/edit'
+  get 'products/destroy'
   mount_devise_token_auth_for 'User', at: 'api/auth'
   namespace :api do
     #API ROUTES SHOULD GO HERE
